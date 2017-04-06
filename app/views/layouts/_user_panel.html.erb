@@ -1,0 +1,16 @@
+<% if user_signed_in? %>
+
+  <div>
+    <%= current_user.email %> / <%= link_to 'Sign out', destroy_user_session_path, :method => :delete %>
+  </div>
+
+<% else %>
+
+  <div>
+    <%= link_to 'Sign up', new_user_registration_path, class: "logo-iconed" %> / 
+    <%= link_to 'Sign in', new_user_session_path %>
+    &nbsp;&nbsp;&nbsp;<span style="color:green">All the test users (rake db:seed) have password: "12345678"</span>
+  </div>
+  
+<% end %>
+

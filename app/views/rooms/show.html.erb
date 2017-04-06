@@ -1,0 +1,18 @@
+<h1>Chat room</h1>
+ 
+<div class="jumbotron">
+  <form id="send_form">
+    <label>Name:&nbsp;&nbsp;&nbsp;&nbsp;</label>
+    <input id="name" type="text" data-behavior="room_speaker">
+    <br>
+    <label>Content:</label>
+    <input id="content" type="text" data-behavior="room_speaker">
+    <br>
+    <br>
+    <input type="submit" data-behavior="room_speaker">
+  </form>
+</div>
+
+<div id="messages" class="jumbotron">
+  <%= render @messages %>
+</div>
