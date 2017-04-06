@@ -13,7 +13,7 @@ class RoomChannel < ApplicationCable::Channel
     message = current_user.messages.create!(name: param_message['name'], content: param_message['content'])
 
     # Debug
-    message = Message.new name: param_message['name'], content: param_message['content']
+    # message = Message.new name: param_message['name'], content: param_message['content']
 
     ActionCable.server.broadcast "room_#{param_message['user_signed_cookie']}_channel",
                                  message: render_message(message)
